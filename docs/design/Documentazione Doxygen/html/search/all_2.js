@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['getclassifica_0',['getClassifica',['../classit_1_1unisa_1_1torneo_1_1controller_1_1_torneo_controller.html#a5e298bf3698db69b9ba1ed795ac44fe9',1,'it.unisa.torneo.controller.TorneoController.getClassifica()'],['../classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a8021e02c7296664b33752deaaf6261d5',1,'it.unisa.torneo.model.Torneo.getClassifica()']]],
+  ['getcognome_1',['getCognome',['../classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#afcd3eb60e3efdd02a7501bb6f1613ef9',1,'it::unisa::torneo::model::Giocatore']]],
+  ['getdata_2',['getData',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#adec5d3823410de85264b271a2ffaf3ff',1,'it::unisa::torneo::model::Partita']]],
+  ['getdatanascita_3',['getDataNascita',['../classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#ac49c45c5e4d1a572df6ea522ce802fb5',1,'it::unisa::torneo::model::Giocatore']]],
+  ['getgiocatori_4',['getGiocatori',['../classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html#a3be1722099d1a0886b30acea8582db42',1,'it::unisa::torneo::model::Squadra']]],
+  ['getgoalcasa_5',['getGoalCasa',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#af74477056c1658221f5a89c320a28d63',1,'it::unisa::torneo::model::Partita']]],
+  ['getgoalospite_6',['getGoalOspite',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#a15c0e6dff8460223e48edbd08e856489',1,'it::unisa::torneo::model::Partita']]],
+  ['getnome_7',['getNome',['../classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abed31a1e890bcce5bcbb0b73c449a556',1,'it.unisa.torneo.model.Giocatore.getNome()'],['../classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html#add54d1b046e033a081b05082d368a073',1,'it.unisa.torneo.model.Squadra.getNome()']]],
+  ['getpartite_8',['getPartite',['../classit_1_1unisa_1_1torneo_1_1controller_1_1_torneo_controller.html#af219b4da57e37edcfaf240977754543b',1,'it.unisa.torneo.controller.TorneoController.getPartite()'],['../classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#ad178234ed4d74fd385dab3a28b34ec93',1,'it.unisa.torneo.model.Torneo.getPartite()']]],
+  ['getpunti_9',['getPunti',['../classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a80cd4d21d87d6a25beebfa7413acfadd',1,'it::unisa::torneo::model::VoceClassifica']]],
+  ['getpunticasa_10',['getPuntiCasa',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#aa3b31e27f497df2c598e3660a19d3cb5',1,'it::unisa::torneo::model::Partita']]],
+  ['getpuntiospite_11',['getPuntiOspite',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#afb044cc579cd1df97b0132a68a343f9d',1,'it::unisa::torneo::model::Partita']]],
+  ['getsquadra_12',['getSquadra',['../classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a9176f2d40a66a8146aa675103007afb7',1,'it::unisa::torneo::model::VoceClassifica']]],
+  ['getsquadracasa_13',['getSquadraCasa',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#a230102eecb4679ad0aca480fd831f541',1,'it::unisa::torneo::model::Partita']]],
+  ['getsquadraospite_14',['getSquadraOspite',['../classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html#ae7147b267910cdfc99c5f23d8264d61c',1,'it::unisa::torneo::model::Partita']]],
+  ['getsquadre_15',['getSquadre',['../classit_1_1unisa_1_1torneo_1_1controller_1_1_torneo_controller.html#af7583338d64655110e7dd30f39ddf704',1,'it.unisa.torneo.controller.TorneoController.getSquadre()'],['../classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a5892f09a82d66f047fe7179d8e9b18f8',1,'it.unisa.torneo.model.Torneo.getSquadre()']]],
+  ['getvoci_16',['getVoci',['../classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a46a50f7f184b1cdcb6d0542c63a8985c',1,'it::unisa::torneo::model::Classifica']]],
+  ['giocatore_17',['Giocatore',['../classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html',1,'it.unisa.torneo.model.Giocatore'],['../classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#af0019f4f37973d636528969de882607b',1,'it.unisa.torneo.model.Giocatore.Giocatore()']]],
+  ['giocatore_2ejava_18',['Giocatore.java',['../_giocatore_8java.html',1,'']]]
+];
