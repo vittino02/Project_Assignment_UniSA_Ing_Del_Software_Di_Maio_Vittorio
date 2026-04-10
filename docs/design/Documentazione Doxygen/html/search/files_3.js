@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['partita_2ejava_0',['Partita.java',['../_partita_8java.html',1,'']]]
+  ['squadra_2ejava_0',['Squadra.java',['../_squadra_8java.html',1,'']]]
 ];

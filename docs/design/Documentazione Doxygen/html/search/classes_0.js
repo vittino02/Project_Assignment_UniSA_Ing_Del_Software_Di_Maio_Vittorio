@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['classifica_0',['Classifica',['../classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html',1,'it::unisa::torneo::model']]]
+  ['archiviotorneoservice_0',['ArchivioTorneoService',['../classit_1_1unisa_1_1torneo_1_1persistence_1_1_archivio_torneo_service.html',1,'it::unisa::torneo::persistence']]]
 ];

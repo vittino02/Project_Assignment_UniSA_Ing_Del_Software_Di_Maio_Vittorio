@@ -1,0 +1,9 @@
+it\unisa\torneo\model\PartitaTest.class
+it\unisa\torneo\model\TorneoTest.class
+it\unisa\torneo\controller\TorneoControllerTest.class
+it\unisa\torneo\controller\TorneoControllerArchivioTest.class
+it\unisa\torneo\model\VoceClassificaTest.class
+it\unisa\torneo\model\ClassificaTest.class
+it\unisa\torneo\model\GiocatoreTest.class
+it\unisa\torneo\persistence\ArchivioTorneoServiceTest.class
+it\unisa\torneo\model\SquadraTest.class

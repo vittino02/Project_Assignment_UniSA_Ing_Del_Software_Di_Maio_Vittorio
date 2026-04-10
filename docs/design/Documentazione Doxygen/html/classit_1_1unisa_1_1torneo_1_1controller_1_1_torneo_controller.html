@@ -28,6 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Progetto_Ing_Del_Software_Torneo_a_5
    </div>
+   <div id="projectbrief">Applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</div>
   </td>
  </tr>
  </tbody>
@@ -92,13 +93,15 @@ $(function(){initNavTree('classit_1_1unisa_1_1torneo_1_1controller_1_1_torneo_co
 </div><!--header-->
 <div class="contents">
 
-<p>Rappresenta òa classe controller che fa tra intermediara tra interfaccia e torneo.  
+<p>Facciata applicativa tra controller JavaFX e modello del torneo.  
  <a href="#details">Continua...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Membri pubblici</h2></td></tr>
 <tr class="memitem:a8f22ab807e5941c737d21fc4752a6208" id="r_a8f22ab807e5941c737d21fc4752a6208"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8f22ab807e5941c737d21fc4752a6208">TorneoController</a> (<a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html">Torneo</a> torneo)</td></tr>
 <tr class="memdesc:a8f22ab807e5941c737d21fc4752a6208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce un controller associato a un torneo.  <br /></td></tr>
+<tr class="memitem:a5655a3b72d56d61619ddecf0e6bbf9fd" id="r_a5655a3b72d56d61619ddecf0e6bbf9fd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5655a3b72d56d61619ddecf0e6bbf9fd">TorneoController</a> (<a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html">Torneo</a> torneo, <a class="el" href="classit_1_1unisa_1_1torneo_1_1persistence_1_1_archivio_torneo_service.html">ArchivioTorneoService</a> archivioTorneoService)</td></tr>
+<tr class="memdesc:a5655a3b72d56d61619ddecf0e6bbf9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce un controller associato a un torneo e alla persistenza.  <br /></td></tr>
 <tr class="memitem:a191b368054836f73a5339ea86319b91e" id="r_a191b368054836f73a5339ea86319b91e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a191b368054836f73a5339ea86319b91e">inserisciSquadra</a> (String nome, List&lt; <a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html">Giocatore</a> &gt; giocatori)</td></tr>
 <tr class="memdesc:a191b368054836f73a5339ea86319b91e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce una nuova squadra nel torneo.  <br /></td></tr>
 <tr class="memitem:a6a41e0c6dd9520032a9dea1d5d7d2df7" id="r_a6a41e0c6dd9520032a9dea1d5d7d2df7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6a41e0c6dd9520032a9dea1d5d7d2df7">modificaSquadra</a> (<a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html">Squadra</a> squadra, String nuovoNome, List&lt; <a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html">Giocatore</a> &gt; nuoviGiocatori)</td></tr>
@@ -115,12 +118,19 @@ Membri pubblici</h2></td></tr>
 <tr class="memdesc:af219b4da57e37edcfaf240977754543b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'elenco delle partite registrate.  <br /></td></tr>
 <tr class="memitem:a5e298bf3698db69b9ba1ed795ac44fe9" id="r_a5e298bf3698db69b9ba1ed795ac44fe9"><td class="memItemLeft"><a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html">Classifica</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5e298bf3698db69b9ba1ed795ac44fe9">getClassifica</a> ()</td></tr>
 <tr class="memdesc:a5e298bf3698db69b9ba1ed795ac44fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la classifica corrente del torneo.  <br /></td></tr>
+<tr class="memitem:a8f38494255e7d991955dde40ba783311" id="r_a8f38494255e7d991955dde40ba783311"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8f38494255e7d991955dde40ba783311">salvaArchivio</a> (Path path)  throws IOException </td></tr>
+<tr class="memdesc:a8f38494255e7d991955dde40ba783311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva l'archivio corrente del torneo su file.  <br /></td></tr>
+<tr class="memitem:a6d719b58bc148911c84d4f39fc4baef5" id="r_a6d719b58bc148911c84d4f39fc4baef5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6d719b58bc148911c84d4f39fc4baef5">caricaArchivio</a> (Path path)  throws IOException </td></tr>
+<tr class="memdesc:a6d719b58bc148911c84d4f39fc4baef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica un archivio da file e sostituisce i dati correnti del torneo.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Rappresenta òa classe controller che fa tra intermediara tra interfaccia e torneo. </p>
+<div class="textblock"><p>Facciata applicativa tra controller JavaFX e modello del torneo. </p>
+<p>La classe espone operazioni ad alto livello per gestione di squadre, partite, classifica e archivio, delegando la logica di dominio a <span class="tt"><a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html" title="Aggregato principale del dominio del torneo.">Torneo</a></span> e la persistenza a <span class="tt"><a class="el" href="classit_1_1unisa_1_1torneo_1_1persistence_1_1_archivio_torneo_service.html" title="Gestisce il salvataggio e il caricamento dell&#39;archivio del torneo.">ArchivioTorneoService</a></span>. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00032">32</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentazione dei costruttori e dei distruttori</h2>
 <a id="a8f22ab807e5941c737d21fc4752a6208" name="a8f22ab807e5941c737d21fc4752a6208"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f22ab807e5941c737d21fc4752a6208">&#9670;&#160;</a></span>TorneoController()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f22ab807e5941c737d21fc4752a6208">&#9670;&#160;</a></span>TorneoController() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,11 +152,79 @@ Membri pubblici</h2></td></tr>
   </dd>
 </dl>
 <dl class="section pre"><dt>Precondizione</dt><dd>torneo != null </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd>il controller è associato al torneo passato come parametro </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>il controller e associato al torneo passato come parametro </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00044">44</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
+</div>
+</div>
+<a id="a5655a3b72d56d61619ddecf0e6bbf9fd" name="a5655a3b72d56d61619ddecf0e6bbf9fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5655a3b72d56d61619ddecf0e6bbf9fd">&#9670;&#160;</a></span>TorneoController() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">it.unisa.torneo.controller.TorneoController.TorneoController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html">Torneo</a></td>          <td class="paramname"><span class="paramname"><em>torneo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1torneo_1_1persistence_1_1_archivio_torneo_service.html">ArchivioTorneoService</a></td>          <td class="paramname"><span class="paramname"><em>archivioTorneoService</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Costruisce un controller associato a un torneo e alla persistenza. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">torneo</td><td>torneo gestito dal controller </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">archivioTorneoService</td><td>service usata per salvataggio e caricamento </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00054">54</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni membro</h2>
+<a id="a6d719b58bc148911c84d4f39fc4baef5" name="a6d719b58bc148911c84d4f39fc4baef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d719b58bc148911c84d4f39fc4baef5">&#9670;&#160;</a></span>caricaArchivio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.torneo.controller.TorneoController.caricaArchivio </td>
+          <td>(</td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> throws IOException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica un archivio da file e sostituisce i dati correnti del torneo. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>percorso del file da leggere </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Eccezioni</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>se il percorso non e valido </td></tr>
+    <tr><td class="paramname">IOException</td><td>se il file non puo essere letto o non e valido </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00186">186</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
+</div>
+</div>
 <a id="a5e298bf3698db69b9ba1ed795ac44fe9" name="a5e298bf3698db69b9ba1ed795ac44fe9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e298bf3698db69b9ba1ed795ac44fe9">&#9670;&#160;</a></span>getClassifica()</h2>
 
@@ -164,6 +242,8 @@ Membri pubblici</h2></td></tr>
 
 <p>Restituisce la classifica corrente del torneo. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>classifica corrente </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00164">164</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
 
 </div>
 </div>
@@ -185,6 +265,8 @@ Membri pubblici</h2></td></tr>
 <p>Restituisce l'elenco delle partite registrate. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>lista delle partite del torneo </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00155">155</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
 </div>
 </div>
 <a id="af7583338d64655110e7dd30f39ddf704" name="af7583338d64655110e7dd30f39ddf704"></a>
@@ -204,6 +286,8 @@ Membri pubblici</h2></td></tr>
 
 <p>Restituisce l'elenco delle squadre del torneo. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>lista delle squadre registrate </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00100">100</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
 
 </div>
 </div>
@@ -265,6 +349,8 @@ goalCasa &gt;= 0 </dd>
 goalOspite &gt;= 0 </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la partita viene aggiunta al torneo </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00120">120</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
 </div>
 </div>
 <a id="a191b368054836f73a5339ea86319b91e" name="a191b368054836f73a5339ea86319b91e"></a>
@@ -299,6 +385,8 @@ goalOspite &gt;= 0 </dd></dl>
 giocatori != null </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>se i dati sono validi, una nuova squadra viene aggiunta al torneo </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00074">74</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
 </div>
 </div>
 <a id="acb93536a75e0c13e9c07d2f4d0fd2371" name="acb93536a75e0c13e9c07d2f4d0fd2371"></a>
@@ -332,6 +420,8 @@ giocatori != null </dd></dl>
 <dd>
 partitaNuova != null </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la partita viene aggiornata nel torneo </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00135">135</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
 
 </div>
 </div>
@@ -375,6 +465,8 @@ nuovoNome != null </dd>
 nuoviGiocatori != null </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la squadra viene aggiornata con i nuovi dati </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00091">91</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
 </div>
 </div>
 <a id="aaadc4a14e078a94f8b2fd5c7b11ce087" name="aaadc4a14e078a94f8b2fd5c7b11ce087"></a>
@@ -402,10 +494,46 @@ nuoviGiocatori != null </dd></dl>
 <dl class="section pre"><dt>Precondizione</dt><dd>partita != null </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la partita viene rimossa dal torneo </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00146">146</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
+</div>
+</div>
+<a id="a8f38494255e7d991955dde40ba783311" name="a8f38494255e7d991955dde40ba783311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f38494255e7d991955dde40ba783311">&#9670;&#160;</a></span>salvaArchivio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.torneo.controller.TorneoController.salvaArchivio </td>
+          <td>(</td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> throws IOException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva l'archivio corrente del torneo su file. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>percorso di destinazione del file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Eccezioni</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>se il percorso non e valido </td></tr>
+    <tr><td class="paramname">IOException</td><td>se il file non puo essere scritto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_controller_8java_source.html#l00175">175</a> del file <a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a>.</p>
+
 </div>
 </div>
 <hr/>La documentazione per questa classe è stata generata a partire dal seguente file:<ul>
-<li>src/main/java/it/unisa/torneo/controller/<a class="el" href="_torneo_controller_8java.html">TorneoController.java</a></li>
+<li>src/main/java/it/unisa/torneo/controller/<a class="el" href="_torneo_controller_8java_source.html">TorneoController.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -9,5 +9,6 @@ var classit_1_1unisa_1_1torneo_1_1model_1_1_torneo =
     [ "getSquadre", "classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a5892f09a82d66f047fe7179d8e9b18f8", null ],
     [ "modificaPartita", "classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a1bb359073e4d7c9a47bfe1011bd84c20", null ],
     [ "modificaSquadra", "classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a166486a2c8d8c140a44ee67a3a6018a4", null ],
-    [ "rimuoviPartita", "classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a2922b11eb05407510ab76f512ef81e49", null ]
+    [ "rimuoviPartita", "classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#a2922b11eb05407510ab76f512ef81e49", null ],
+    [ "sostituisciDati", "classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#ab1de2347f176fc24843170f453456796", null ]
 ];

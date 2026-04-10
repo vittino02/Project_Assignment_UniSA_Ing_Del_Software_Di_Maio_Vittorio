@@ -11,12 +11,17 @@
 package it.unisa.torneo.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
+import java.util.Set;
 
 /**
- *@brief  Rapprestenta la classe torne e gestisce squadre partite e classifica
+ * @brief Aggregato principale del dominio del torneo.
+ *
+ * La classe mantiene squadre, partite e classifica corrente, applica i vincoli
+ * di coerenza principali e ricalcola la classifica dopo ogni modifica.
  */
-
 public class Torneo {
 
     private final List<Squadra> squadre;
@@ -26,8 +31,8 @@ public class Torneo {
     /**
      * @brief Costruisce un torneo vuoto.
      *
-     * @post il torneo non contiene squadre né partite
-     * @post la classifica è inizializzata
+     * @post il torneo non contiene squadre ne partite
+     * @post la classifica e inizializzata
      */
     public Torneo() {
         this.squadre = new ArrayList<>();
@@ -40,19 +45,19 @@ public class Torneo {
      *
      * @param[in] squadra squadra da aggiungere
      * @pre squadra != null
-     * @pre la squadra è completa
-     * @pre non esiste già una squadra con lo stesso nome
+     * @pre la squadra e completa
+     * @pre non esiste gia una squadra con lo stesso nome
      * @post la squadra viene aggiunta al torneo
      */
     public void aggiungiSquadra(Squadra squadra) {
         if (squadra == null) {
-            throw new IllegalArgumentException("La squadra non può essere null.");
+            throw new IllegalArgumentException("La squadra non puo essere null.");
         }
         if (!squadra.isCompleta()) {
             throw new IllegalArgumentException("La squadra deve contenere esattamente 5 giocatori.");
         }
         if (esisteNomeSquadra(squadra.getNome(), null)) {
-            throw new IllegalArgumentException("Esiste già una squadra con lo stesso nome.");
+            throw new IllegalArgumentException("Esiste gia una squadra con lo stesso nome.");
         }
 
         squadre.add(squadra);
@@ -69,24 +74,24 @@ public class Torneo {
      * @pre nuovoNome != null
      * @pre nuoviGiocatori != null
      * @pre la squadra appartiene al torneo
-     * @pre il nuovo nome non è già usato da un'altra squadra
+     * @pre il nuovo nome non e gia usato da un'altra squadra
      * @post la squadra viene aggiornata con i nuovi dati
      */
     public void modificaSquadra(Squadra squadra, String nuovoNome, List<Giocatore> nuoviGiocatori) {
         if (squadra == null) {
-            throw new IllegalArgumentException("La squadra da modificare non può essere null.");
+            throw new IllegalArgumentException("La squadra da modificare non puo essere null.");
         }
         if (!squadre.contains(squadra)) {
             throw new IllegalArgumentException("La squadra non appartiene al torneo.");
         }
         if (nuovoNome == null || nuovoNome.isBlank()) {
-            throw new IllegalArgumentException("Il nome della squadra non è valido.");
+            throw new IllegalArgumentException("Il nome della squadra non e valido.");
         }
         if (nuoviGiocatori == null) {
-            throw new IllegalArgumentException("La lista dei giocatori non può essere null.");
+            throw new IllegalArgumentException("La lista dei giocatori non puo essere null.");
         }
         if (esisteNomeSquadra(nuovoNome, squadra)) {
-            throw new IllegalArgumentException("Esiste già un'altra squadra con lo stesso nome.");
+            throw new IllegalArgumentException("Esiste gia un'altra squadra con lo stesso nome.");
         }
 
         squadra.aggiornaDati(nuovoNome, nuoviGiocatori);
@@ -113,7 +118,7 @@ public class Torneo {
      */
     public void aggiungiPartita(Partita partita) {
         if (partita == null) {
-            throw new IllegalArgumentException("La partita non può essere null.");
+            throw new IllegalArgumentException("La partita non puo essere null.");
         }
         if (!squadre.contains(partita.getSquadraCasa()) || !squadre.contains(partita.getSquadraOspite())) {
             throw new IllegalArgumentException("Le squadre della partita devono appartenere al torneo.");
@@ -163,7 +168,7 @@ public class Torneo {
      */
     public void rimuoviPartita(Partita partita) {
         if (partita == null) {
-            throw new IllegalArgumentException("La partita non può essere null.");
+            throw new IllegalArgumentException("La partita non puo essere null.");
         }
         if (!partite.remove(partita)) {
             throw new IllegalArgumentException("La partita da rimuovere non appartiene al torneo.");
@@ -184,7 +189,7 @@ public class Torneo {
     /**
      * @brief Aggiorna la classifica corrente del torneo.
      *
-     * @post la classifica è coerente con squadre e partite registrate
+     * @post la classifica e coerente con squadre e partite registrate
      */
     public void aggiornaClassifica() {
         classifica.aggiorna(squadre, partite);
@@ -200,11 +205,38 @@ public class Torneo {
     }
 
     /**
-     * @brief Verifica se esiste già una squadra con un dato nome.
+     * @brief Sostituisce l'intero contenuto del torneo con dati gia validati.
+     *
+     * @param[in] nuoveSquadre nuove squadre del torneo
+     * @param[in] nuovePartite nuove partite del torneo
+     * @pre nuoveSquadre != null
+     * @pre nuovePartite != null
+     * @post il torneo contiene soltanto i dati passati come parametro
+     * @post la classifica viene ricalcolata
+     */
+    public void sostituisciDati(List<Squadra> nuoveSquadre, List<Partita> nuovePartite) {
+        if (nuoveSquadre == null || nuovePartite == null) {
+            throw new IllegalArgumentException("Squadre e partite non possono essere null.");
+        }
+
+        validaSquadre(nuoveSquadre);
+        validaPartite(nuoveSquadre, nuovePartite);
+
+        squadre.clear();
+        squadre.addAll(nuoveSquadre);
+
+        partite.clear();
+        partite.addAll(nuovePartite);
+
+        aggiornaClassifica();
+    }
+
+    /**
+     * @brief Verifica se esiste gia una squadra con un dato nome.
      *
      * @param[in] nome nome da cercare
      * @param[in] esclusa eventuale squadra da escludere dal controllo
-     * @return true se esiste già una squadra con quel nome, false altrimenti
+     * @return true se esiste gia una squadra con quel nome, false altrimenti
      */
     private boolean esisteNomeSquadra(String nome, Squadra esclusa) {
         for (Squadra s : squadre) {
@@ -213,5 +245,45 @@ public class Torneo {
             }
         }
         return false;
+    }
+
+    /**
+     * @brief Verifica che la lista delle squadre sia coerente.
+     *
+     * @param[in] nuoveSquadre elenco delle squadre da controllare
+     */
+    private void validaSquadre(List<Squadra> nuoveSquadre) {
+        Set<String> nomiSquadre = new HashSet<>();
+
+        for (Squadra squadra : nuoveSquadre) {
+            if (squadra == null) {
+                throw new IllegalArgumentException("La lista delle squadre contiene elementi null.");
+            }
+            if (!squadra.isCompleta()) {
+                throw new IllegalArgumentException("Ogni squadra deve contenere esattamente 5 giocatori.");
+            }
+
+            String nomeNormalizzato = squadra.getNome().trim().toLowerCase(Locale.ROOT);
+            if (!nomiSquadre.add(nomeNormalizzato)) {
+                throw new IllegalArgumentException("Le squadre devono avere nomi univoci.");
+            }
+        }
+    }
+
+    /**
+     * @brief Verifica che tutte le partite facciano riferimento alle squadre del torneo.
+     *
+     * @param[in] nuoveSquadre elenco delle squadre valide
+     * @param[in] nuovePartite elenco delle partite da controllare
+     */
+    private void validaPartite(List<Squadra> nuoveSquadre, List<Partita> nuovePartite) {
+        for (Partita partita : nuovePartite) {
+            if (partita == null) {
+                throw new IllegalArgumentException("La lista delle partite contiene elementi null.");
+            }
+            if (!nuoveSquadre.contains(partita.getSquadraCasa()) || !nuoveSquadre.contains(partita.getSquadraOspite())) {
+                throw new IllegalArgumentException("Ogni partita deve usare squadre presenti nel torneo.");
+            }
+        }
     }
 }

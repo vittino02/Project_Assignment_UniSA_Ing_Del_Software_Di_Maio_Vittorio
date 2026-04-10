@@ -25,9 +25,11 @@
 var NAVTREE =
 [
   [ "Progetto_Ing_Del_Software_Torneo_a_5", "index.html", [
+    [ "Documentazione tecnica del progetto", "index.html", "index" ],
     [ "Classi", "annotated.html", [
       [ "Elenco dei tipi composti", "annotated.html", "annotated_dup" ],
       [ "Indice dei tipi composti", "classes.html", null ],
+      [ "Gerarchia delle classi", "hierarchy.html", "hierarchy" ],
       [ "Membri dei composti", "functions.html", [
         [ "Tutto", "functions.html", null ],
         [ "Funzioni", "functions_func.html", null ]
@@ -41,7 +43,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_classifica_8java.html"
+"_archivio_torneo_service_8java_source.html"
 ];
 
 var SYNCONMSG = 'cliccare per disabilitare la sincronizzazione del pannello';

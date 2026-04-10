@@ -2,13 +2,80 @@
 
 <ClassDiagram name="Ing_Del_Software_Calcio_a_5">
   <ClassDiagramComponents>
-    <Class name="TorneoController" package="it.unisa.torneo.controller" visibility="public" xPosition="910.0" yPosition="1038.0">
+    <Class name="Main" package="it.unisa.torneo" visibility="public" xPosition="999.0" yPosition="100.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterfacciaUtente" package="it.unisa.torneo.view" visibility="public" xPosition="100.0" yPosition="1000.0">
+      <Fields>
+        <Field name="controller" type="TorneoController" visibility="private"/>
+        <Field name="archivioCorrente" type="Path" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public">
+          <Argument type="TorneoController" name="controller"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SquadraDialogController" package="it.unisa.torneo.view" visibility="public" xPosition="1450.0" yPosition="220.0">
+      <Fields>
+        <Field name="squadraDaModificare" type="Squadra" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public"/>
+        <Method name="setSquadraDaModificare" returnType="void" visibility="public">
+          <Argument type="Squadra" name="squadra"/>
+        </Method>
+        <Method name="configureValidation" returnType="void" visibility="public">
+          <Argument type="Dialog&lt;ButtonType&gt;" name="dialog"/>
+        </Method>
+        <Method name="apply" returnType="void" visibility="public">
+          <Argument type="TorneoController" name="controller"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PartitaDialogController" package="it.unisa.torneo.view" visibility="public" xPosition="1243.0" yPosition="1994.0">
+      <Fields>
+        <Field name="partitaDaModificare" type="Partita" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public"/>
+        <Method name="setContesto" returnType="void" visibility="public">
+          <Argument type="List&lt;Squadra&gt;" name="squadre"/>
+          <Argument type="Partita" name="partita"/>
+        </Method>
+        <Method name="configureValidation" returnType="void" visibility="public">
+          <Argument type="Dialog&lt;ButtonType&gt;" name="dialog"/>
+        </Method>
+        <Method name="apply" returnType="void" visibility="public">
+          <Argument type="TorneoController" name="controller"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TorneoController" package="it.unisa.torneo.controller" visibility="public" xPosition="1779.0" yPosition="549.0">
       <Fields>
         <Field name="torneo" type="Torneo" visibility="private" isFinal="true"/>
+        <Field name="archivioTorneoService" type="ArchivioTorneoService" visibility="private" isFinal="true"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
           <Argument type="Torneo" name="torneo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Torneo" name="torneo"/>
+          <Argument type="ArchivioTorneoService" name="archivioTorneoService"/>
         </Constructor>
       </Constructors>
       <Methods>
@@ -38,9 +105,66 @@
         </Method>
         <Method name="getPartite" returnType="List&lt;Partita&gt;" visibility="public"/>
         <Method name="getClassifica" returnType="Classifica" visibility="public"/>
+        <Method name="salvaArchivio" returnType="void" visibility="public">
+          <Argument type="Path" name="path"/>
+        </Method>
+        <Method name="caricaArchivio" returnType="void" visibility="public">
+          <Argument type="Path" name="path"/>
+        </Method>
       </Methods>
     </Class>
-    <Class name="Classifica" package="it.unisa.torneo.model" visibility="public" xPosition="1250.0" yPosition="411.0">
+    <Class name="ArchivioTorneoService" package="it.unisa.torneo.persistence" visibility="public" xPosition="1779.0" yPosition="1450.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="salva" returnType="void" visibility="public">
+          <Argument type="Path" name="path"/>
+          <Argument type="Torneo" name="torneo"/>
+        </Method>
+        <Method name="carica" returnType="Torneo" visibility="public">
+          <Argument type="Path" name="path"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Torneo" package="it.unisa.torneo.model" visibility="public" xPosition="1900.0" yPosition="1000.0">
+      <Fields>
+        <Field name="squadre" type="List&lt;Squadra&gt;" visibility="private" isFinal="true"/>
+        <Field name="partite" type="List&lt;Partita&gt;" visibility="private" isFinal="true"/>
+        <Field name="classifica" type="Classifica" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="aggiungiSquadra" returnType="void" visibility="public">
+          <Argument type="Squadra" name="squadra"/>
+        </Method>
+        <Method name="modificaSquadra" returnType="void" visibility="public">
+          <Argument type="Squadra" name="squadra"/>
+          <Argument type="String" name="nuovoNome"/>
+          <Argument type="List&lt;Giocatore&gt;" name="nuoviGiocatori"/>
+        </Method>
+        <Method name="getSquadre" returnType="List&lt;Squadra&gt;" visibility="public"/>
+        <Method name="aggiungiPartita" returnType="void" visibility="public">
+          <Argument type="Partita" name="partita"/>
+        </Method>
+        <Method name="modificaPartita" returnType="void" visibility="public">
+          <Argument type="Partita" name="partitaVecchia"/>
+          <Argument type="Partita" name="partitaNuova"/>
+        </Method>
+        <Method name="rimuoviPartita" returnType="void" visibility="public">
+          <Argument type="Partita" name="partita"/>
+        </Method>
+        <Method name="getPartite" returnType="List&lt;Partita&gt;" visibility="public"/>
+        <Method name="aggiornaClassifica" returnType="void" visibility="public"/>
+        <Method name="getClassifica" returnType="Classifica" visibility="public"/>
+        <Method name="sostituisciDati" returnType="void" visibility="public">
+          <Argument type="List&lt;Squadra&gt;" name="nuoveSquadre"/>
+          <Argument type="List&lt;Partita&gt;" name="nuovePartite"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Classifica" package="it.unisa.torneo.model" visibility="public" xPosition="1821.0" yPosition="1859.0">
       <Fields>
         <Field name="voci" type="List&lt;VoceClassifica&gt;" visibility="private" isFinal="true"/>
       </Fields>
@@ -54,36 +178,39 @@
         </Method>
         <Method name="ordinaPerPunteggio" returnType="void" visibility="public"/>
         <Method name="getVoci" returnType="List&lt;VoceClassifica&gt;" visibility="public"/>
-        <Method name="trovaVoce" returnType="VoceClassifica" visibility="private">
-          <Argument type="Squadra" name="squadra"/>
-        </Method>
       </Methods>
     </Class>
-    <Class name="Giocatore" package="it.unisa.torneo.model" visibility="public" xPosition="1759.0" yPosition="1401.0">
+    <Class name="Squadra" package="it.unisa.torneo.model" visibility="public" xPosition="220.0" yPosition="550.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
-        <Field name="cognome" type="String" visibility="private"/>
-        <Field name="dataNascita" type="LocalDate" visibility="private"/>
+        <Field name="giocatori" type="List&lt;Giocatore&gt;" visibility="private" isFinal="true"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
           <Argument type="String" name="nome"/>
-          <Argument type="String" name="cognome"/>
-          <Argument type="LocalDate" name="dataNascita"/>
         </Constructor>
       </Constructors>
       <Methods>
         <Method name="aggiornaDati" returnType="void" visibility="public">
           <Argument type="String" name="nome"/>
-          <Argument type="String" name="cognome"/>
-          <Argument type="LocalDate" name="dataNascita"/>
+          <Argument type="List&lt;Giocatore&gt;" name="giocatori"/>
+        </Method>
+        <Method name="aggiungiGiocatore" returnType="void" visibility="public">
+          <Argument type="Giocatore" name="giocatore"/>
+        </Method>
+        <Method name="rimuoviGiocatore" returnType="void" visibility="public">
+          <Argument type="Giocatore" name="giocatore"/>
+        </Method>
+        <Method name="sostituisciGiocatore" returnType="void" visibility="public">
+          <Argument type="Giocatore" name="vecchio"/>
+          <Argument type="Giocatore" name="nuovo"/>
         </Method>
         <Method name="getNome" returnType="String" visibility="public"/>
-        <Method name="getCognome" returnType="String" visibility="public"/>
-        <Method name="getDataNascita" returnType="LocalDate" visibility="public"/>
+        <Method name="getGiocatori" returnType="List&lt;Giocatore&gt;" visibility="public"/>
+        <Method name="isCompleta" returnType="boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Partita" package="it.unisa.torneo.model" visibility="public" xPosition="89.0" yPosition="1610.0">
+    <Class name="Partita" package="it.unisa.torneo.model" visibility="public" xPosition="139.0" yPosition="1888.0">
       <Fields>
         <Field name="data" type="LocalDate" visibility="private"/>
         <Field name="squadraCasa" type="Squadra" visibility="private"/>
@@ -116,84 +243,33 @@
         <Method name="getSquadraOspite" returnType="Squadra" visibility="public"/>
         <Method name="getGoalCasa" returnType="int" visibility="public"/>
         <Method name="getGoalOspite" returnType="int" visibility="public"/>
-        <Method name="validaDati" returnType="void" visibility="private">
-          <Argument type="LocalDate" name="data"/>
-          <Argument type="Squadra" name="squadraCasa"/>
-          <Argument type="Squadra" name="squadraOspite"/>
-          <Argument type="int" name="goalCasa"/>
-          <Argument type="int" name="goalOspite"/>
-        </Method>
       </Methods>
     </Class>
-    <Class name="Squadra" package="it.unisa.torneo.model" visibility="public" xPosition="1000.0" yPosition="1900.0">
+    <Class name="Giocatore" package="it.unisa.torneo.model" visibility="public" xPosition="220.0" yPosition="1450.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
-        <Field name="giocatori" type="List&lt;Giocatore&gt;" visibility="private" isFinal="true"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="dataNascita" type="LocalDate" visibility="private"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
           <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="LocalDate" name="dataNascita"/>
         </Constructor>
       </Constructors>
       <Methods>
         <Method name="aggiornaDati" returnType="void" visibility="public">
           <Argument type="String" name="nome"/>
-          <Argument type="List&lt;Giocatore&gt;" name="giocatori"/>
-        </Method>
-        <Method name="aggiungiGiocatore" returnType="void" visibility="public">
-          <Argument type="Giocatore" name="giocatore"/>
-        </Method>
-        <Method name="rimuoviGiocatore" returnType="void" visibility="public">
-          <Argument type="Giocatore" name="giocatore"/>
-        </Method>
-        <Method name="sostituisciGiocatore" returnType="void" visibility="public">
-          <Argument type="Giocatore" name="vecchio"/>
-          <Argument type="Giocatore" name="nuovo"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="LocalDate" name="dataNascita"/>
         </Method>
         <Method name="getNome" returnType="String" visibility="public"/>
-        <Method name="getGiocatori" returnType="List&lt;Giocatore&gt;" visibility="public"/>
-        <Method name="isCompleta" returnType="boolean" visibility="public"/>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="getDataNascita" returnType="LocalDate" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Torneo" package="it.unisa.torneo.model" visibility="public" xPosition="100.0" yPosition="1000.0">
-      <Fields>
-        <Field name="squadre" type="List&lt;Squadra&gt;" visibility="private" isFinal="true"/>
-        <Field name="partite" type="List&lt;Partita&gt;" visibility="private" isFinal="true"/>
-        <Field name="classifica" type="Classifica" visibility="private" isFinal="true"/>
-      </Fields>
-      <Constructors>
-        <Constructor visibility="public"/>
-      </Constructors>
-      <Methods>
-        <Method name="aggiungiSquadra" returnType="void" visibility="public">
-          <Argument type="Squadra" name="squadra"/>
-        </Method>
-        <Method name="modificaSquadra" returnType="void" visibility="public">
-          <Argument type="Squadra" name="squadra"/>
-          <Argument type="String" name="nuovoNome"/>
-          <Argument type="List&lt;Giocatore&gt;" name="nuoviGiocatori"/>
-        </Method>
-        <Method name="getSquadre" returnType="List&lt;Squadra&gt;" visibility="public"/>
-        <Method name="aggiungiPartita" returnType="void" visibility="public">
-          <Argument type="Partita" name="partita"/>
-        </Method>
-        <Method name="modificaPartita" returnType="void" visibility="public">
-          <Argument type="Partita" name="partitaVecchia"/>
-          <Argument type="Partita" name="partitaNuova"/>
-        </Method>
-        <Method name="rimuoviPartita" returnType="void" visibility="public">
-          <Argument type="Partita" name="partita"/>
-        </Method>
-        <Method name="getPartite" returnType="List&lt;Partita&gt;" visibility="public"/>
-        <Method name="aggiornaClassifica" returnType="void" visibility="public"/>
-        <Method name="getClassifica" returnType="Classifica" visibility="public"/>
-        <Method name="esisteNomeSquadra" returnType="boolean" visibility="private">
-          <Argument type="String" name="nome"/>
-          <Argument type="Squadra" name="esclusa"/>
-        </Method>
-      </Methods>
-    </Class>
-    <Class name="VoceClassifica" package="it.unisa.torneo.model" visibility="public" xPosition="1749.0" yPosition="869.0">
+    <Class name="VoceClassifica" package="it.unisa.torneo.model" visibility="public" xPosition="549.0" yPosition="220.0">
       <Fields>
         <Field name="squadra" type="Squadra" visibility="private"/>
         <Field name="punti" type="int" visibility="private"/>
@@ -215,63 +291,48 @@
         <Method name="getPunti" returnType="int" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="InterfacciaUtente" package="it.unisa.torneo.view" visibility="public" xPosition="363.0" yPosition="363.0">
-      <Fields>
-        <Field name="controller" type="TorneoController" visibility="private" isFinal="true"/>
-      </Fields>
-      <Constructors>
-        <Constructor visibility="public">
-          <Argument type="TorneoController" name="controller"/>
-        </Constructor>
-      </Constructors>
-      <Methods>
-        <Method name="mostraSchermataPrincipale" returnType="void" visibility="public"/>
-        <Method name="mostraSchermataSquadre" returnType="void" visibility="public"/>
-        <Method name="mostraSchermataPartite" returnType="void" visibility="public"/>
-        <Method name="mostraSchermataClassifica" returnType="void" visibility="public"/>
-        <Method name="mostraSquadre" returnType="void" visibility="public">
-          <Argument type="List&lt;Squadra&gt;" name="squadre"/>
-        </Method>
-        <Method name="mostraPartite" returnType="void" visibility="public">
-          <Argument type="List&lt;Partita&gt;" name="partite"/>
-        </Method>
-        <Method name="mostraClassifica" returnType="void" visibility="public">
-          <Argument type="Classifica" name="classifica"/>
-        </Method>
-        <Method name="mostraMessaggio" returnType="void" visibility="public">
-          <Argument type="String" name="messaggio"/>
-        </Method>
-        <Method name="mostraErrore" returnType="void" visibility="public">
-          <Argument type="String" name="errore"/>
-        </Method>
-      </Methods>
-    </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="squadraCasa" source="it.unisa.torneo.model.Partita" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="voci" source="it.unisa.torneo.model.Classifica" target="it.unisa.torneo.model.VoceClassifica" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;VoceClassifica&gt;"/>
-    <HasRelation name="partite" source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Partita" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Partita&gt;"/>
-    <HasRelation name="squadre" source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Squadra&gt;"/>
-    <HasRelation name="giocatori" source="it.unisa.torneo.model.Squadra" target="it.unisa.torneo.model.Giocatore" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Giocatore&gt;"/>
-    <UseRelation source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.model.Classifica" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="it.unisa.torneo.model.Partita" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.model.Squadra" target="it.unisa.torneo.model.Giocatore" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="classifica" source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Classifica" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.model.Classifica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="controller" source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.controller.TorneoController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="squadraOspite" source="it.unisa.torneo.model.Partita" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Giocatore" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Classifica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="torneo" source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Torneo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.model.VoceClassifica" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.model.Classifica" target="it.unisa.torneo.model.VoceClassifica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Classifica" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Giocatore" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.view.PartitaDialogController" target="it.unisa.torneo.controller.TorneoController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.Main" target="it.unisa.torneo.model.Torneo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.view.SquadraDialogController" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Classifica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="partite" source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Partita" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Partita&gt;"/>
+    <HasRelation name="classifica" source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Classifica" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.view.PartitaDialogController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.Squadra" target="it.unisa.torneo.model.Giocatore" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="squadraCasa" source="it.unisa.torneo.model.Partita" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="archivioTorneoService" source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.persistence.ArchivioTorneoService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.Classifica" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="squadra" source="it.unisa.torneo.model.VoceClassifica" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="squadraDaModificare" source="it.unisa.torneo.view.SquadraDialogController" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..1"/>
+    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.model.Classifica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="voci" source="it.unisa.torneo.model.Classifica" target="it.unisa.torneo.model.VoceClassifica" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;VoceClassifica&gt;"/>
+    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.Classifica" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.model.VoceClassifica" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controller" source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.controller.TorneoController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.view.SquadraDialogController" target="it.unisa.torneo.model.Giocatore" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.Main" target="it.unisa.torneo.view.InterfacciaUtente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="squadraOspite" source="it.unisa.torneo.model.Partita" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="partitaDaModificare" source="it.unisa.torneo.view.PartitaDialogController" target="it.unisa.torneo.model.Partita" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..1"/>
+    <UseRelation source="it.unisa.torneo.persistence.ArchivioTorneoService" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.controller.TorneoController" target="it.unisa.torneo.model.Classifica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="squadre" source="it.unisa.torneo.model.Torneo" target="it.unisa.torneo.model.Squadra" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Squadra&gt;"/>
+    <UseRelation source="it.unisa.torneo.view.SquadraDialogController" target="it.unisa.torneo.controller.TorneoController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.persistence.ArchivioTorneoService" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.persistence.ArchivioTorneoService" target="it.unisa.torneo.model.Giocatore" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.Main" target="it.unisa.torneo.controller.TorneoController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.persistence.ArchivioTorneoService" target="it.unisa.torneo.model.Torneo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="giocatori" source="it.unisa.torneo.model.Squadra" target="it.unisa.torneo.model.Giocatore" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Giocatore&gt;"/>
+    <UseRelation source="it.unisa.torneo.view.InterfacciaUtente" target="it.unisa.torneo.model.Partita" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="it.unisa.torneo.view.PartitaDialogController" target="it.unisa.torneo.model.Squadra" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

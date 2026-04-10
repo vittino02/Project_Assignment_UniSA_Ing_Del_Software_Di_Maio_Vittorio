@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Progetto_Ing_Del_Software_Torneo_a_5:  File sorgente src/main/java/it/unisa/torneo/model/Giocatore.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Progetto_Ing_Del_Software_Torneo_a_5
+   </div>
+   <div id="projectbrief">Applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_giocatore_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Giocatore.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_giocatore_8java.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">package </span>it.unisa.torneo.model;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.time.LocalDate;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html">   17</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#af0019f4f37973d636528969de882607b">Giocatore</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span> String nome;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">private</span> String cognome;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">private</span> LocalDate dataNascita;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#af0019f4f37973d636528969de882607b">   34</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#af0019f4f37973d636528969de882607b">Giocatore</a>(String nome, String cognome, LocalDate dataNascita) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (nome == <span class="keyword">null</span> || nome.isBlank()) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Il nome del giocatore non è valido.&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (cognome == <span class="keyword">null</span> || cognome.isBlank()) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Il cognome del giocatore non è valido.&quot;</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span> (dataNascita == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;La data di nascita non può essere null.&quot;</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        this.nome = nome;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        this.cognome = cognome;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        this.dataNascita = dataNascita;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abb518d1c4a0e58eb9e182b04f4be47a3">   61</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abb518d1c4a0e58eb9e182b04f4be47a3">aggiornaDati</a>(String nome, String cognome, LocalDate dataNascita) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (nome == <span class="keyword">null</span> || nome.isBlank()) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Il nome del giocatore non è valido.&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (cognome == <span class="keyword">null</span> || cognome.isBlank()) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Il cognome del giocatore non è valido.&quot;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (dataNascita == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;La data di nascita non può essere null.&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        this.nome = nome;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        this.cognome = cognome;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        this.dataNascita = dataNascita;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abed31a1e890bcce5bcbb0b73c449a556">   82</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abed31a1e890bcce5bcbb0b73c449a556">getNome</a>() {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">return</span> nome;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#afcd3eb60e3efdd02a7501bb6f1613ef9">   91</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#afcd3eb60e3efdd02a7501bb6f1613ef9">getCognome</a>() {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> cognome;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#ac49c45c5e4d1a572df6ea522ce802fb5">  100</a></span>    <span class="keyword">public</span> LocalDate <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#ac49c45c5e4d1a572df6ea522ce802fb5">getDataNascita</a>() {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> dataNascita;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_giocatore_html_abb518d1c4a0e58eb9e182b04f4be47a3"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abb518d1c4a0e58eb9e182b04f4be47a3">it.unisa.torneo.model.Giocatore.aggiornaDati</a></div><div class="ttdeci">void aggiornaDati(String nome, String cognome, LocalDate dataNascita)</div><div class="ttdoc">Aggiorna i dati del giocatore.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">Giocatore.java:61</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_giocatore_html_abed31a1e890bcce5bcbb0b73c449a556"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#abed31a1e890bcce5bcbb0b73c449a556">it.unisa.torneo.model.Giocatore.getNome</a></div><div class="ttdeci">String getNome()</div><div class="ttdoc">Restituisce il nome del giocatore.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">Giocatore.java:82</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_giocatore_html_ac49c45c5e4d1a572df6ea522ce802fb5"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#ac49c45c5e4d1a572df6ea522ce802fb5">it.unisa.torneo.model.Giocatore.getDataNascita</a></div><div class="ttdeci">LocalDate getDataNascita()</div><div class="ttdoc">Restituisce la data di nascita del giocatore.</div><div class="ttdef"><b>Definition</b> <a href="#l00100">Giocatore.java:100</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_giocatore_html_af0019f4f37973d636528969de882607b"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#af0019f4f37973d636528969de882607b">it.unisa.torneo.model.Giocatore.Giocatore</a></div><div class="ttdeci">Giocatore(String nome, String cognome, LocalDate dataNascita)</div><div class="ttdoc">Costruisce un nuovo giocatore.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">Giocatore.java:34</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_giocatore_html_afcd3eb60e3efdd02a7501bb6f1613ef9"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_giocatore.html#afcd3eb60e3efdd02a7501bb6f1613ef9">it.unisa.torneo.model.Giocatore.getCognome</a></div><div class="ttdeci">String getCognome()</div><div class="ttdoc">Restituisce il cognome del giocatore.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">Giocatore.java:91</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>main</b></li><li class="navelem"><b>java</b></li><li class="navelem"><b>it</b></li><li class="navelem"><b>unisa</b></li><li class="navelem"><b>torneo</b></li><li class="navelem"><b>model</b></li><li class="navelem"><a href="_giocatore_8java.html">Giocatore.java</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

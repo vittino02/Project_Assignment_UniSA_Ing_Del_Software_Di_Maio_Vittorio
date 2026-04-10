@@ -28,6 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Progetto_Ing_Del_Software_Torneo_a_5
    </div>
+   <div id="projectbrief">Applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</div>
   </td>
  </tr>
  </tbody>
@@ -92,7 +93,7 @@ $(function(){initNavTree('classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html','
 </div><!--header-->
 <div class="contents">
 
-<p>Rapprestenta la classe torne e gestisce squadre partite e classifica.  
+<p>Aggregato principale del dominio del torneo.  
  <a href="#details">Continua...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -117,9 +118,14 @@ Membri pubblici</h2></td></tr>
 <tr class="memdesc:afee7cf282ba8c4aef5267fb4bcd2533d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna la classifica corrente del torneo.  <br /></td></tr>
 <tr class="memitem:a8021e02c7296664b33752deaaf6261d5" id="r_a8021e02c7296664b33752deaaf6261d5"><td class="memItemLeft"><a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html">Classifica</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8021e02c7296664b33752deaaf6261d5">getClassifica</a> ()</td></tr>
 <tr class="memdesc:a8021e02c7296664b33752deaaf6261d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la classifica corrente del torneo.  <br /></td></tr>
+<tr class="memitem:ab1de2347f176fc24843170f453456796" id="r_ab1de2347f176fc24843170f453456796"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab1de2347f176fc24843170f453456796">sostituisciDati</a> (List&lt; <a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html">Squadra</a> &gt; nuoveSquadre, List&lt; <a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html">Partita</a> &gt; nuovePartite)</td></tr>
+<tr class="memdesc:ab1de2347f176fc24843170f453456796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sostituisce l'intero contenuto del torneo con dati gia validati.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Rapprestenta la classe torne e gestisce squadre partite e classifica. </p>
+<div class="textblock"><p>Aggregato principale del dominio del torneo. </p>
+<p>La classe mantiene squadre, partite e classifica corrente, applica i vincoli di coerenza principali e ricalcola la classifica dopo ogni modifica. </p>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00025">25</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentazione dei costruttori e dei distruttori</h2>
 <a id="ad68f9b7da989499f5867a95a35dc45ae" name="ad68f9b7da989499f5867a95a35dc45ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad68f9b7da989499f5867a95a35dc45ae">&#9670;&#160;</a></span>Torneo()</h2>
@@ -137,9 +143,11 @@ Membri pubblici</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Costruisce un torneo vuoto. </p>
-<dl class="section post"><dt>Postcondizione</dt><dd>il torneo non contiene squadre né partite </dd>
+<dl class="section post"><dt>Postcondizione</dt><dd>il torneo non contiene squadre ne partite </dd>
 <dd>
-la classifica è inizializzata </dd></dl>
+la classifica e inizializzata </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00037">37</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 
 </div>
 </div>
@@ -160,7 +168,9 @@ la classifica è inizializzata </dd></dl>
 </div><div class="memdoc">
 
 <p>Aggiorna la classifica corrente del torneo. </p>
-<dl class="section post"><dt>Postcondizione</dt><dd>la classifica è coerente con squadre e partite registrate </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>la classifica e coerente con squadre e partite registrate </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00194">194</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 
 </div>
 </div>
@@ -193,6 +203,8 @@ le squadre della partita appartengono al torneo </dd></dl>
 <dd>
 la classifica viene aggiornata </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00119">119</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
+
 </div>
 </div>
 <a id="a03e14fc4e0f5a482f86a906ba01ac8a3" name="a03e14fc4e0f5a482f86a906ba01ac8a3"></a>
@@ -219,10 +231,12 @@ la classifica viene aggiornata </dd></dl>
 </dl>
 <dl class="section pre"><dt>Precondizione</dt><dd>squadra != null </dd>
 <dd>
-la squadra è completa </dd>
+la squadra e completa </dd>
 <dd>
-non esiste già una squadra con lo stesso nome </dd></dl>
+non esiste gia una squadra con lo stesso nome </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la squadra viene aggiunta al torneo </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00052">52</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 
 </div>
 </div>
@@ -244,6 +258,8 @@ non esiste già una squadra con lo stesso nome </dd></dl>
 <p>Restituisce la classifica corrente del torneo. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>classifica corrente </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00203">203</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
+
 </div>
 </div>
 <a id="ad178234ed4d74fd385dab3a28b34ec93" name="ad178234ed4d74fd385dab3a28b34ec93"></a>
@@ -264,6 +280,8 @@ non esiste già una squadra con lo stesso nome </dd></dl>
 <p>Restituisce l'elenco delle partite registrate. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>copia della lista delle partite del torneo </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00185">185</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
+
 </div>
 </div>
 <a id="a5892f09a82d66f047fe7179d8e9b18f8" name="a5892f09a82d66f047fe7179d8e9b18f8"></a>
@@ -283,6 +301,8 @@ non esiste già una squadra con lo stesso nome </dd></dl>
 
 <p>Restituisce l'elenco delle squadre registrate. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>copia della lista delle squadre del torneo </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00106">106</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 
 </div>
 </div>
@@ -323,6 +343,8 @@ le squadre della nuova partita appartengono al torneo </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la partita vecchia viene sostituita con la nuova </dd>
 <dd>
 la classifica viene aggiornata </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00143">143</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 
 </div>
 </div>
@@ -367,8 +389,10 @@ nuoviGiocatori != null </dd>
 <dd>
 la squadra appartiene al torneo </dd>
 <dd>
-il nuovo nome non è già usato da un'altra squadra </dd></dl>
+il nuovo nome non e gia usato da un'altra squadra </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>la squadra viene aggiornata con i nuovi dati </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00080">80</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
 
 </div>
 </div>
@@ -401,10 +425,50 @@ la partita appartiene al torneo </dd></dl>
 <dd>
 la classifica viene aggiornata </dd></dl>
 
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00169">169</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
+
+</div>
+</div>
+<a id="ab1de2347f176fc24843170f453456796" name="ab1de2347f176fc24843170f453456796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1de2347f176fc24843170f453456796">&#9670;&#160;</a></span>sostituisciDati()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void it.unisa.torneo.model.Torneo.sostituisciDati </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html">Squadra</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>nuoveSquadre</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; <a class="el" href="classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html">Partita</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>nuovePartite</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sostituisce l'intero contenuto del torneo con dati gia validati. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nuoveSquadre</td><td>nuove squadre del torneo </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nuovePartite</td><td>nuove partite del torneo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>nuoveSquadre != null </dd>
+<dd>
+nuovePartite != null </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>il torneo contiene soltanto i dati passati come parametro </dd>
+<dd>
+la classifica viene ricalcolata </dd></dl>
+
+<p class="definition">Definizione alla linea <a class="el" href="_torneo_8java_source.html#l00217">217</a> del file <a class="el" href="_torneo_8java_source.html">Torneo.java</a>.</p>
+
 </div>
 </div>
 <hr/>La documentazione per questa classe è stata generata a partire dal seguente file:<ul>
-<li>src/main/java/it/unisa/torneo/model/<a class="el" href="_torneo_8java.html">Torneo.java</a></li>
+<li>src/main/java/it/unisa/torneo/model/<a class="el" href="_torneo_8java_source.html">Torneo.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

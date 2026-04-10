@@ -1,0 +1,202 @@
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-base: #f4f7fb;
+}
+
+.app-root {
+    -fx-background-color:
+        radial-gradient(center 20% 0%, radius 80%, rgba(235,244,255,0.95), transparent 70%),
+        linear-gradient(to bottom, #eef3f9 0%, #f8fbff 100%);
+}
+
+.app-menu {
+    -fx-background-color: linear-gradient(to bottom, #16324f, #1b446a);
+}
+
+.app-menu .label {
+    -fx-text-fill: white;
+}
+
+.hero-panel {
+    -fx-background-color:
+        linear-gradient(to right, rgba(10,37,64,0.95), rgba(23,71,110,0.90)),
+        linear-gradient(to bottom, #1b3f63, #10253a);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-width: 0 0 1 0;
+}
+
+.page-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+}
+
+.page-subtitle {
+    -fx-text-fill: rgba(240,246,252,0.88);
+    -fx-font-size: 13px;
+}
+
+.stat-card {
+    -fx-background-color: rgba(255,255,255,0.10);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-padding: 16 18 16 18;
+    -fx-pref-width: 220;
+}
+
+.stat-title {
+    -fx-text-fill: rgba(240,246,252,0.75);
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.stat-value {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+}
+
+.stat-value-small {
+    -fx-font-size: 20px;
+}
+
+.content-tabs {
+    -fx-tab-min-width: 160;
+}
+
+.content-tabs .tab-header-area {
+    -fx-padding: 0 0 12 0;
+}
+
+.content-tabs .tab {
+    -fx-background-color: #d8e3ee;
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 8 18 8 18;
+}
+
+.content-tabs .tab:selected {
+    -fx-background-color: #ffffff;
+}
+
+.content-tabs .tab-label {
+    -fx-font-weight: 700;
+    -fx-text-fill: #24384d;
+}
+
+.content-pane {
+    -fx-background-color: transparent;
+}
+
+.table-panel {
+    -fx-background-color: rgba(255,255,255,0.96);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(18,51,84,0.10);
+    -fx-padding: 16 16 16 16;
+    -fx-effect: dropshadow(gaussian, rgba(24,54,82,0.08), 12, 0.15, 0, 4);
+}
+
+.section-title {
+    -fx-text-fill: #16324f;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+}
+
+.section-subtitle {
+    -fx-text-fill: #617488;
+    -fx-font-size: 12px;
+}
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(22,50,79,0.08);
+    -fx-padding: 4;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #eff4f9, #e7eef6);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #22405f;
+    -fx-font-weight: 700;
+}
+
+.table-row-cell {
+    -fx-cell-size: 42px;
+    -fx-border-color: transparent transparent rgba(21,48,75,0.05) transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(33,93,150,0.14);
+}
+
+.actions-bar {
+    -fx-padding: 14 0 0 0;
+}
+
+.button {
+    -fx-background-radius: 12;
+    -fx-padding: 10 16 10 16;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #1f6fb2, #1f88c8);
+    -fx-text-fill: white;
+}
+
+.secondary-button {
+    -fx-background-color: #dfe9f3;
+    -fx-text-fill: #21435f;
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(to right, #b44343, #cf5a4d);
+    -fx-text-fill: white;
+}
+
+.status-bar {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-border-color: rgba(22,50,79,0.08);
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-label {
+    -fx-text-fill: #486175;
+    -fx-font-weight: 700;
+}
+
+.status-value {
+    -fx-text-fill: #173452;
+    -fx-font-weight: 700;
+}
+
+.status-hint {
+    -fx-text-fill: #70849a;
+    -fx-font-size: 11px;
+}
+
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom, #f9fbfd, #eef4fa);
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: linear-gradient(to right, #17395a, #23537d);
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+}

@@ -15,9 +15,11 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @brief Rappresenta la Classifica con le varie posizioni
+ * @brief Modello della classifica corrente del torneo.
+ *
+ * La classifica e un dato derivato: viene costruita a partire dalle squadre
+ * registrate e dai risultati delle partite presenti nel torneo.
  */
-
 public class Classifica {
 
     private final List<VoceClassifica> voci;

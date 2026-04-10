@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Progetto_Ing_Del_Software_Torneo_a_5: Pagina Principale</title>
+<title>Progetto_Ing_Del_Software_Torneo_a_5: Documentazione tecnica del progetto</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,6 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Progetto_Ing_Del_Software_Torneo_a_5
    </div>
+   <div id="projectbrief">Applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</div>
   </td>
  </tr>
  </tbody>
@@ -87,10 +88,65 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Progetto_Ing_Del_Software_Torneo_a_5 Documentazione</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Documentazione tecnica del progetto </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_docs_2design_2_documentazione_01_doxygen_2mainpage"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Visione d'insieme</h1>
+<p>Il progetto realizza un'applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</p>
+<p>Le funzionalita principali sono:</p>
+<ul>
+<li>gestione di squadre e giocatori;</li>
+<li>gestione delle partite;</li>
+<li>visualizzazione della classifica;</li>
+<li>salvataggio e caricamento dell'archivio del torneo.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Architettura</h1>
+<p>L'architettura e organizzata nei seguenti package:</p>
+<ul>
+<li><span class="tt">it.unisa.torneo</span> Bootstrap dell'applicazione JavaFX.</li>
+<li><span class="tt">it.unisa.torneo.view</span> Controller JavaFX della finestra principale e dei dialog FXML.</li>
+<li><span class="tt">it.unisa.torneo.controller</span> Facciata applicativa tra GUI e modello.</li>
+<li><span class="tt">it.unisa.torneo.model</span> Classi del dominio del torneo.</li>
+<li><span class="tt">it.unisa.torneo.persistence</span> Servizio di persistenza dell'archivio.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Flusso principale</h1>
+<ol type="1">
+<li><span class="tt">Main</span> carica <span class="tt">main-view.fxml</span> e <span class="tt">app.css</span>.</li>
+<li><span class="tt">InterfacciaUtente</span> configura tabelle, dialog e azioni utente.</li>
+<li><span class="tt">TorneoController</span> inoltra le richieste al modello.</li>
+<li><span class="tt">Torneo</span> aggiorna dati e classifica.</li>
+<li><span class="tt">ArchivioTorneoService</span> salva o ricostruisce l'archivio quando richiesto.</li>
+</ol>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Persistenza</h1>
+<p>La persistenza e isolata in <span class="tt">ArchivioTorneoService</span>.</p>
+<p>Il file di archivio salva:</p>
+<ul>
+<li>squadre;</li>
+<li>giocatori;</li>
+<li>partite.</li>
+</ul>
+<p>La classifica non viene salvata come dato indipendente: viene ricalcolata al caricamento a partire dai risultati delle partite.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Diagrammi e documenti di supporto</h1>
+<p>La documentazione di design del progetto e disponibile in:</p>
+<ul>
+<li><span class="tt">docs/design/design.md</span></li>
+</ul>
+<p>La sorgente del diagramma di classe e disponibile in:</p>
+<ul>
+<li><span class="tt">docs/design/UMLDiagrams/Class Diagrams/Class_Diagram_Progetto_ing_del_Software.cdg</span></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Generazione della documentazione</h1>
+<p>Per rigenerare la documentazione HTML:</p>
+<div class="fragment"><div class="line">doxygen &quot;docs/design/Documentazione Doxygen/Doxyfile&quot;</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

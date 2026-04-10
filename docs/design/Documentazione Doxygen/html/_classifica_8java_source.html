@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Progetto_Ing_Del_Software_Torneo_a_5:  File sorgente src/main/java/it/unisa/torneo/model/Classifica.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Progetto_Ing_Del_Software_Torneo_a_5
+   </div>
+   <div id="projectbrief">Applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_classifica_8java_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Classifica.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_classifica_8java.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">package </span>it.unisa.torneo.model;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.util.Comparator;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html">   23</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a6ae1ebed49055c84269d42be6d213ec6">Classifica</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span> <span class="keyword">final</span> List&lt;VoceClassifica&gt; voci;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a6ae1ebed49055c84269d42be6d213ec6">   32</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a6ae1ebed49055c84269d42be6d213ec6">Classifica</a>() {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        this.voci = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a8cd73290c71a8bdc42d302a61f174194">   46</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a8cd73290c71a8bdc42d302a61f174194">aggiorna</a>(List&lt;Squadra&gt; squadre, List&lt;Partita&gt; partite) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> (squadre == <span class="keyword">null</span> || partite == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Squadre e partite non possono essere null.&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        voci.clear();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html">Squadra</a> squadra : squadre) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            voci.add(<span class="keyword">new</span> <a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html">VoceClassifica</a>(squadra, 0));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html">Partita</a> partita : partite) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html">VoceClassifica</a> voceCasa = trovaVoce(partita.getSquadraCasa());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html">VoceClassifica</a> voceOspite = trovaVoce(partita.getSquadraOspite());</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">if</span> (voceCasa != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                voceCasa.<a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a11f38c7445c2a141c2efeffb035f0614">incrementaPunti</a>(partita.getPuntiCasa());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span> (voceOspite != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                voceOspite.<a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a11f38c7445c2a141c2efeffb035f0614">incrementaPunti</a>(partita.getPuntiOspite());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a0bf42e7b417e1190d6cb84123dbd38ce">ordinaPerPunteggio</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a0bf42e7b417e1190d6cb84123dbd38ce">   77</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a0bf42e7b417e1190d6cb84123dbd38ce">ordinaPerPunteggio</a>() {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        voci.sort(Comparator.comparingInt(<a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a80cd4d21d87d6a25beebfa7413acfadd">VoceClassifica::getPunti</a>).reversed());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a46a50f7f184b1cdcb6d0542c63a8985c">   86</a></span>    <span class="keyword">public</span> List&lt;VoceClassifica&gt; <a class="code hl_function" href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a46a50f7f184b1cdcb6d0542c63a8985c">getVoci</a>() {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(voci);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">private</span> <a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html">VoceClassifica</a> trovaVoce(<a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html">Squadra</a> squadra) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html">VoceClassifica</a> voce : voci) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">if</span> (voce.getSquadra() == squadra) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">return</span> voce;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+</div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_classifica_html_a0bf42e7b417e1190d6cb84123dbd38ce"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a0bf42e7b417e1190d6cb84123dbd38ce">it.unisa.torneo.model.Classifica.ordinaPerPunteggio</a></div><div class="ttdeci">void ordinaPerPunteggio()</div><div class="ttdoc">Ordina la classifica in ordine decrescente di punteggio.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">Classifica.java:77</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_classifica_html_a46a50f7f184b1cdcb6d0542c63a8985c"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a46a50f7f184b1cdcb6d0542c63a8985c">it.unisa.torneo.model.Classifica.getVoci</a></div><div class="ttdeci">List&lt; VoceClassifica &gt; getVoci()</div><div class="ttdoc">Restituisce le voci della classifica.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">Classifica.java:86</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_classifica_html_a6ae1ebed49055c84269d42be6d213ec6"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a6ae1ebed49055c84269d42be6d213ec6">it.unisa.torneo.model.Classifica.Classifica</a></div><div class="ttdeci">Classifica()</div><div class="ttdoc">Costruisce una classifica vuota.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">Classifica.java:32</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_classifica_html_a8cd73290c71a8bdc42d302a61f174194"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_classifica.html#a8cd73290c71a8bdc42d302a61f174194">it.unisa.torneo.model.Classifica.aggiorna</a></div><div class="ttdeci">void aggiorna(List&lt; Squadra &gt; squadre, List&lt; Partita &gt; partite)</div><div class="ttdoc">Aggiorna la classifica a partire da squadre e partite del torneo.</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Classifica.java:46</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_partita_html"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_partita.html">it.unisa.torneo.model.Partita</a></div><div class="ttdoc">Rappresenta la partita con goal e squadre in campo.</div><div class="ttdef"><b>Definition</b> <a href="_partita_8java_source.html#l00019">Partita.java:19</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_squadra_html"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html">it.unisa.torneo.model.Squadra</a></div><div class="ttdoc">Rappresenta la squadra con la sua rosa di giocatori.</div><div class="ttdef"><b>Definition</b> <a href="_squadra_8java_source.html#l00019">Squadra.java:19</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica_html"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html">it.unisa.torneo.model.VoceClassifica</a></div><div class="ttdoc">Rappresenta le varie voci della classifica.</div><div class="ttdef"><b>Definition</b> <a href="_voce_classifica_8java_source.html#l00016">VoceClassifica.java:16</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica_html_a11f38c7445c2a141c2efeffb035f0614"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a11f38c7445c2a141c2efeffb035f0614">it.unisa.torneo.model.VoceClassifica.incrementaPunti</a></div><div class="ttdeci">void incrementaPunti(int valore)</div><div class="ttdoc">Incrementa il punteggio della squadra.</div><div class="ttdef"><b>Definition</b> <a href="_voce_classifica_8java_source.html#l00049">VoceClassifica.java:49</a></div></div>
+<div class="ttc" id="aclassit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica_html_a80cd4d21d87d6a25beebfa7413acfadd"><div class="ttname"><a href="classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a80cd4d21d87d6a25beebfa7413acfadd">it.unisa.torneo.model.VoceClassifica.getPunti</a></div><div class="ttdeci">int getPunti()</div><div class="ttdoc">Restituisce il punteggio associato alla squadra.</div><div class="ttdef"><b>Definition</b> <a href="_voce_classifica_8java_source.html#l00086">VoceClassifica.java:86</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>main</b></li><li class="navelem"><b>java</b></li><li class="navelem"><b>it</b></li><li class="navelem"><b>unisa</b></li><li class="navelem"><b>torneo</b></li><li class="navelem"><b>model</b></li><li class="navelem"><a href="_classifica_8java.html">Classifica.java</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<DialogPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unisa.torneo.view.SquadraDialogController"
+            prefHeight="520.0" prefWidth="760.0">
+    <buttonTypes>
+        <ButtonType fx:constant="OK"/>
+        <ButtonType fx:constant="CANCEL"/>
+    </buttonTypes>
+    <content>
+        <VBox spacing="12.0">
+            <children>
+                <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="120.0" prefWidth="140.0"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="260.0"/>
+                    </columnConstraints>
+                    <children>
+                        <Label text="Nome squadra" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="nomeSquadraField" promptText="Inserisci il nome della squadra"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    </children>
+                </GridPane>
+                <Separator/>
+                <GridPane hgap="10.0" vgap="8.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="90.0" prefWidth="110.0"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="170.0"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="170.0"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="180.0"/>
+                    </columnConstraints>
+                    <children>
+                        <Label style="-fx-font-weight: bold;" text="Giocatore" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <Label style="-fx-font-weight: bold;" text="Nome" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label style="-fx-font-weight: bold;" text="Cognome" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                        <Label style="-fx-font-weight: bold;" text="Data di nascita" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                        <Label text="1" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="nomeGiocatore1Field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <TextField fx:id="cognomeGiocatore1Field" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <DatePicker fx:id="dataGiocatore1Picker" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                        <Label text="2" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <TextField fx:id="nomeGiocatore2Field" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <TextField fx:id="cognomeGiocatore2Field" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                        <DatePicker fx:id="dataGiocatore2Picker" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+                        <Label text="3" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="nomeGiocatore3Field" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <TextField fx:id="cognomeGiocatore3Field" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                        <DatePicker fx:id="dataGiocatore3Picker" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+                        <Label text="4" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        <TextField fx:id="nomeGiocatore4Field" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                        <TextField fx:id="cognomeGiocatore4Field" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                        <DatePicker fx:id="dataGiocatore4Picker" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+
+                        <Label text="5" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                        <TextField fx:id="nomeGiocatore5Field" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        <TextField fx:id="cognomeGiocatore5Field" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                        <DatePicker fx:id="dataGiocatore5Picker" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+    </content>
+</DialogPane>

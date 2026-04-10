@@ -1,9 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "acgimoprstv",
-  1: "cgipstv",
-  2: "cgipstv",
-  3: "acgimoprstv"
+  0: "acdefgimoprstv",
+  1: "acgimopstv",
+  2: "cgpstv",
+  3: "acegimoprstv",
+  4: "adefgipstv"
 };
 
 var indexSectionNames =
@@ -11,7 +12,8 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "files",
-  3: "functions"
+  3: "functions",
+  4: "pages"
 };
 
 var indexSectionLabels =
@@ -19,6 +21,7 @@ var indexSectionLabels =
   0: "Tutto",
   1: "Classi",
   2: "File",
-  3: "Funzioni"
+  3: "Funzioni",
+  4: "Pagine"
 };
 

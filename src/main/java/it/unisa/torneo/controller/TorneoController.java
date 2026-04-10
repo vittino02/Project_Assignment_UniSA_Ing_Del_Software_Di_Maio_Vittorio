@@ -15,30 +15,51 @@ import it.unisa.torneo.model.Giocatore;
 import it.unisa.torneo.model.Partita;
 import it.unisa.torneo.model.Squadra;
 import it.unisa.torneo.model.Torneo;
+import it.unisa.torneo.persistence.ArchivioTorneoService;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.List;
 
 /**
- * @brief Rappresenta òa classe controller che fa tra intermediara tra interfaccia e torneo.
+ * @brief Facciata applicativa tra controller JavaFX e modello del torneo.
+ *
+ * La classe espone operazioni ad alto livello per gestione di squadre,
+ * partite, classifica e archivio, delegando la logica di dominio a `Torneo`
+ * e la persistenza a `ArchivioTorneoService`.
  */
-
 public class TorneoController {
 
     private final Torneo torneo;
+    private final ArchivioTorneoService archivioTorneoService;
 
     /**
      * @brief Costruisce un controller associato a un torneo.
      *
      * @param[in] torneo torneo gestito dal controller
      * @pre torneo != null
-     * @post il controller è associato al torneo passato come parametro
+     * @post il controller e associato al torneo passato come parametro
      */
     public TorneoController(Torneo torneo) {
+        this(torneo, new ArchivioTorneoService());
+    }
+
+    /**
+     * @brief Costruisce un controller associato a un torneo e alla persistenza.
+     *
+     * @param[in] torneo torneo gestito dal controller
+     * @param[in] archivioTorneoService service usata per salvataggio e caricamento
+     */
+    public TorneoController(Torneo torneo, ArchivioTorneoService archivioTorneoService) {
         if (torneo == null) {
-            throw new IllegalArgumentException("Il torneo non può essere null.");
+            throw new IllegalArgumentException("Il torneo non puo essere null.");
+        }
+        if (archivioTorneoService == null) {
+            throw new IllegalArgumentException("La service di persistenza non puo essere null.");
         }
         this.torneo = torneo;
+        this.archivioTorneoService = archivioTorneoService;
     }
 
     /**
@@ -142,5 +163,28 @@ public class TorneoController {
      */
     public Classifica getClassifica() {
         return torneo.getClassifica();
+    }
+
+    /**
+     * @brief Salva l'archivio corrente del torneo su file.
+     *
+     * @param[in] path percorso di destinazione del file
+     * @throws IllegalArgumentException se il percorso non e valido
+     * @throws IOException se il file non puo essere scritto
+     */
+    public void salvaArchivio(Path path) throws IOException {
+        archivioTorneoService.salva(path, torneo);
+    }
+
+    /**
+     * @brief Carica un archivio da file e sostituisce i dati correnti del torneo.
+     *
+     * @param[in] path percorso del file da leggere
+     * @throws IllegalArgumentException se il percorso non e valido
+     * @throws IOException se il file non puo essere letto o non e valido
+     */
+    public void caricaArchivio(Path path) throws IOException {
+        Torneo torneoCaricato = archivioTorneoService.carica(path);
+        torneo.sostituisciDati(torneoCaricato.getSquadre(), torneoCaricato.getPartite());
     }
 }

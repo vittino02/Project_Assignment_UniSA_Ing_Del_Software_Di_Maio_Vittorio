@@ -28,6 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Progetto_Ing_Del_Software_Torneo_a_5
    </div>
+   <div id="projectbrief">Applicazione Java e JavaFX per la gestione di un torneo di calcio a 5.</div>
   </td>
  </tr>
  </tbody>
@@ -92,24 +93,50 @@ $(function(){initNavTree('_interfaccia_utente_8java.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Gestisce l'interazione tra utente e applicazione.  
+<p>Controller JavaFX della schermata principale.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>import it.unisa.torneo.controller.TorneoController;</code><br />
-<code>import it.unisa.torneo.model.Classifica;</code><br />
+<code>import it.unisa.torneo.model.Giocatore;</code><br />
 <code>import it.unisa.torneo.model.Partita;</code><br />
 <code>import it.unisa.torneo.model.Squadra;</code><br />
+<code>import it.unisa.torneo.model.VoceClassifica;</code><br />
+<code>import javafx.beans.property.ReadOnlyObjectWrapper;</code><br />
+<code>import javafx.beans.property.ReadOnlyStringWrapper;</code><br />
+<code>import javafx.collections.FXCollections;</code><br />
+<code>import javafx.collections.ObservableList;</code><br />
+<code>import javafx.fxml.FXML;</code><br />
+<code>import javafx.fxml.FXMLLoader;</code><br />
+<code>import javafx.scene.control.Alert;</code><br />
+<code>import javafx.scene.control.ButtonBar;</code><br />
+<code>import javafx.scene.control.ButtonType;</code><br />
+<code>import javafx.scene.control.Dialog;</code><br />
+<code>import javafx.scene.control.DialogPane;</code><br />
+<code>import javafx.scene.control.Label;</code><br />
+<code>import javafx.scene.control.TableColumn;</code><br />
+<code>import javafx.scene.control.TableView;</code><br />
+<code>import javafx.stage.FileChooser;</code><br />
+<code>import javafx.stage.Stage;</code><br />
+<code>import javafx.stage.Window;</code><br />
+<code>import java.io.IOException;</code><br />
+<code>import java.nio.file.Files;</code><br />
+<code>import java.nio.file.Path;</code><br />
 <code>import java.util.List;</code><br />
-</div><table class="memberdecls">
+<code>import java.util.Objects;</code><br />
+<code>import java.util.Optional;</code><br />
+</div>
+<p><a href="_interfaccia_utente_8java_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Composti</h2></td></tr>
 <tr class="memitem:it_2Eunisa_2Etorneo_2Eview_2EInterfacciaUtente" id="r_it_2Eunisa_2Etorneo_2Eview_2EInterfacciaUtente"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classit_1_1unisa_1_1torneo_1_1view_1_1_interfaccia_utente.html">it.unisa.torneo.view.InterfacciaUtente</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta l'interfaccia per poter usare l'applicazione.  <a href="classit_1_1unisa_1_1torneo_1_1view_1_1_interfaccia_utente.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:it_2Eunisa_2Etorneo_2Eview_2EInterfacciaUtente_2EOperazione" id="r_it_2Eunisa_2Etorneo_2Eview_2EInterfacciaUtente_2EOperazione"><td class="memItemLeft">interface &#160;</td><td class="memItemRight"><a class="el" href="interfaceit_1_1unisa_1_1torneo_1_1view_1_1_interfaccia_utente_1_1_operazione.html">it.unisa.torneo.view.InterfacciaUtente.Operazione</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaccia funzionale per operazioni che possono fallire.  <a href="interfaceit_1_1unisa_1_1torneo_1_1view_1_1_interfaccia_utente_1_1_operazione.html#details">Continua...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Gestisce l'interazione tra utente e applicazione. </p>
-<p>Questa classe rappresenta lo scheletro della parte di interfaccia utente. Ha la responsabilità di mostrare le schermate principali, raccogliere gli input dell'utente e invocare le operazioni del controller.</p>
-<dl class="section author"><dt>Autore</dt><dd>Vittorio Di Maio </dd></dl>
-<dl class="section version"><dt>Versione</dt><dd>1.0 </dd></dl>
+<div class="textblock"><p>Controller JavaFX della schermata principale. </p>
+<p>La classe coordina la vista principale, aggiorna le tabelle mostrate all'utente e delega a <span class="tt">TorneoController</span> le operazioni applicative. </p>
+
+<p class="definition">Definizione nel file <a class="el" href="_interfaccia_utente_8java_source.html">InterfacciaUtente.java</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

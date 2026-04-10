@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['torneo_0',['Torneo',['../classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#ad68f9b7da989499f5867a95a35dc45ae',1,'it::unisa::torneo::model::Torneo']]],
-  ['torneocontroller_1',['TorneoController',['../classit_1_1unisa_1_1torneo_1_1controller_1_1_torneo_controller.html#a8f22ab807e5941c737d21fc4752a6208',1,'it::unisa::torneo::controller::TorneoController']]]
+  ['salva_0',['salva',['../classit_1_1unisa_1_1torneo_1_1persistence_1_1_archivio_torneo_service.html#aa9b0ffb73d59b3c8fe5aa84a1e35757e',1,'it::unisa::torneo::persistence::ArchivioTorneoService']]],
+  ['salvaarchivio_1',['salvaArchivio',['../classit_1_1unisa_1_1torneo_1_1controller_1_1_torneo_controller.html#a8f38494255e7d991955dde40ba783311',1,'it::unisa::torneo::controller::TorneoController']]],
+  ['setcontesto_2',['setContesto',['../classit_1_1unisa_1_1torneo_1_1view_1_1_partita_dialog_controller.html#a6cc9913b5c1b53473e6f2de26d851950',1,'it::unisa::torneo::view::PartitaDialogController']]],
+  ['setcontroller_3',['setController',['../classit_1_1unisa_1_1torneo_1_1view_1_1_interfaccia_utente.html#adc29829ac1f0c367b3298796c31d2592',1,'it::unisa::torneo::view::InterfacciaUtente']]],
+  ['setpunti_4',['setPunti',['../classit_1_1unisa_1_1torneo_1_1model_1_1_voce_classifica.html#a2aecea5f94370b4709ec159739fe3ae6',1,'it::unisa::torneo::model::VoceClassifica']]],
+  ['setsquadradamodificare_5',['setSquadraDaModificare',['../classit_1_1unisa_1_1torneo_1_1view_1_1_squadra_dialog_controller.html#ae562fa328fb75ab12435a0bd7d0104b6',1,'it::unisa::torneo::view::SquadraDialogController']]],
+  ['sostituiscidati_6',['sostituisciDati',['../classit_1_1unisa_1_1torneo_1_1model_1_1_torneo.html#ab1de2347f176fc24843170f453456796',1,'it::unisa::torneo::model::Torneo']]],
+  ['sostituiscigiocatore_7',['sostituisciGiocatore',['../classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html#a2ec7e18893292ffb5a17c3a5ab9fbdcd',1,'it::unisa::torneo::model::Squadra']]],
+  ['squadra_8',['Squadra',['../classit_1_1unisa_1_1torneo_1_1model_1_1_squadra.html#ae0b7cd321c21e0eed681411643011f64',1,'it::unisa::torneo::model::Squadra']]],
+  ['start_9',['start',['../classit_1_1unisa_1_1torneo_1_1_main.html#ab5aec1ec3097f5067eec9289aa00a8c1',1,'it::unisa::torneo::Main']]]
 ];
